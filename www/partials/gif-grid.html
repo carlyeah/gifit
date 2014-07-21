@@ -1,0 +1,50 @@
+<ion-view title="Dash">.
+    <ion-content class="has-header padding">
+
+        <ion-refresher
+                pulling-text="Pull to refresh..."
+                on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" ng-model="model.code" placeholder="Search">
+            </label>
+            <button class="button button-clear" ng-click="searchGifs()">
+                Search
+            </button>
+        </div>
+
+        <div ng-repeat="items in split_gifs" class="row">
+            <div ng-repeat="item in items" class="col-33"
+                 ng-click="saveDetails(item)"
+                 style="background: url('{{item.images.fixed_height_still.url}}') no-repeat center; height: 100px; width: 100px;background-size: cover;">
+                <div >
+                    <div >
+                        <a href="#/detail/{{item.id}}">
+                           <!-- <img src="{{item.images.fixed_height_still.url}}"/>-->
+                        </a>
+                    </div>
+
+                </div>
+               <!-- <div class="card" ng-click="saveDetails(item)">
+                    <div class="item item-text-wrap">
+                        <a href="#/detail/{{item.id}}">
+                            <img src="{{item.images.fixed_height_still.url}}"/>
+                        </a>
+                    </div>
+
+                </div>-->
+
+            </div>
+
+        </div>
+
+        <!--<ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="10%">
+        </ion-infinite-scroll>-->
+    </ion-content>
+
+</ion-view>
