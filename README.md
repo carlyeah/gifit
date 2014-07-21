@@ -1,3 +1,4 @@
-<strong>GIF It!</strong>
+GIF It!
+===============
 
 An app using Ionic framework and Angular JS
