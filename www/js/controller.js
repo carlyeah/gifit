@@ -30,6 +30,8 @@ angular.module('starter.controllers', [])
         };
 
         $scope.getJSON = function (query) {
+            var loadingMessage = document.getElementById("loadingMessage").innerText;
+            console.log(loadingMessage);
             $ionicLoading.show({
                template: "Loading..."
             });
@@ -56,8 +58,20 @@ angular.module('starter.controllers', [])
         };
 
         $scope.saveDetails = function (item) {
-            sharedProperties.setProperty(item);
-            $location.url("/detail/" + item.id);
+            var video = item.images.original.mp4;
+            console.log(video);
+            var activity = new MozActivity({
+                name: "open",
+                data: {
+                    type: ["video/webm",
+                        "video/mp4",
+                        "video/3gpp",
+                        "video/youtube"],
+                    url: "http://techslides.com/demos/sample-videos/small.mp4"
+                }
+            });
+           // sharedProperties.setProperty(item);
+           // $location.url("/detail/" + item.id);
         };
 
         $scope.splitArraysInMultipleArrays = function (array, numberOfSubArrays) {

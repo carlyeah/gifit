@@ -1,4 +1,4 @@
-var gifItApp = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services']);
+var gifItApp = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'localization']);
 
 gifItApp.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {

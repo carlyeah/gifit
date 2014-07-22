@@ -1,18 +1,18 @@
-<ion-view title="Dash">.
+<ion-view title="Dash">
+     <b id="loadingMessage" style="display: none" ng-bind="'_searchButton_' | i18n"></b>
     <ion-content class="has-header padding">
 
         <ion-refresher
-                pulling-text="Pull to refresh..."
+                pulling-text="{{'_pullToRefresh_' | i18n}}"
                 on-refresh="doRefresh()">
         </ion-refresher>
 
         <div class="bar bar-header item-input-inset">
             <label class="item-input-wrapper">
                 <i class="icon ion-ios7-search placeholder-icon"></i>
-                <input type="search" ng-model="model.code" placeholder="Search">
+                <input type="search" ng-model="model.code" placeholder="{{'_pullToRefresh_' | i18n}}">
             </label>
-            <button class="button button-clear" ng-click="searchGifs()">
-                Search
+            <button class="button button-clear" ng-click="searchGifs()" ng-bind="'_searchButton_' | i18n">
             </button>
         </div>
 
